@@ -79,9 +79,6 @@
 //    [mAllClasses retain];
     
     [oTableView reloadData];
-    NSIndexPath* insertIndexPath = [NSIndexPath
-    [oTableView insertRowsAtIndexPaths:indexPath withRowAnimation:(UITableViewRowAnimationTop)];
-    
     [oTextField resignFirstResponder];
     
     oTextField.text = @"";
