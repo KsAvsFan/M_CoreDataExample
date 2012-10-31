@@ -79,9 +79,12 @@
 //    [mAllClasses retain];
     
     [oTableView reloadData];
+    NSIndexPath* insertIndexPath = [NSIndexPath
+    [oTableView insertRowsAtIndexPaths:indexPath withRowAnimation:(UITableViewRowAnimationTop)];
+    
     [oTextField resignFirstResponder];
     
-//    oTextField.text = @"";
+    oTextField.text = @"";
 //    Replaced by selecting the "Clear on Editing" option in xib.
 }
 
@@ -114,21 +117,13 @@
 
 #pragma mark UITableViewDelegate
 
-//-(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-//{
-//    if (buttonIndex==1) {
-//        MMClass *item=[mAllClasses objectAtIndex:self.rowToDelete];
-//        [mManagedObjectContext deleteObject:item];
-//        [mManagedObjectContext save:nil];
-//        [mAllClasses removeObjectAtIndex:self.rowToDelete];
-//        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:self.rowToDelete inSection:0];
-//        [oTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-////        [oTableView reloadData];
-//    }
-//}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // animates the deselection of the row that was clicked.
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+//    Old code from TableView excercise
 //    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@""
 //                                                        message:((MMClass*)[mAllClasses objectAtIndex:indexPath.row]).name
 //                                                       delegate:self
@@ -138,7 +133,9 @@
 ////    self.rowToDelete=indexPath.row;
 //    [alertView show];
 //    [alertView release];
+
 }
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle==UITableViewCellEditingStyleDelete) {
@@ -148,6 +145,10 @@
         [mAllClasses removeObjectAtIndex:indexPath.row];
         [oTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
+    if (editingStyle == UITableViewCellEditingStyleInsert){
+        NSLog(@"Editing?");
+    }
+
 }
 #pragma mark UITableViewDataSouce
 
@@ -175,6 +176,12 @@
     return tableViewCell;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row%2 == 0) {
+        UIColor *altCellColor = [UIColor colorWithWhite:0.7 alpha:0.1];
+        cell.backgroundColor = altCellColor;
+    }
+}
 
 
 @end
