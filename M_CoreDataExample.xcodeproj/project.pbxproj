@@ -18,6 +18,10 @@
 		1FB43773163EDB610033A0D1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FB43772163EDB610033A0D1 /* Default-568h@2x.png */; };
 		1FB43776163EDB610033A0D1 /* MM_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB43775163EDB610033A0D1 /* MM_ViewController.m */; };
 		1FB43779163EDB610033A0D1 /* MM_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FB43777163EDB610033A0D1 /* MM_ViewController.xib */; };
+		1FB43781163EE81C0033A0D1 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FB4377F163EE81C0033A0D1 /* Model.xcdatamodeld */; };
+		1FB43784163EE9750033A0D1 /* MMStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB43783163EE9750033A0D1 /* MMStudent.m */; };
+		1FB43787163EE9750033A0D1 /* MMClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB43786163EE9750033A0D1 /* MMClass.m */; };
+		1FB43789163EEE500033A0D1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB43788163EEE500033A0D1 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,12 @@
 		1FB43774163EDB610033A0D1 /* MM_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MM_ViewController.h; sourceTree = "<group>"; };
 		1FB43775163EDB610033A0D1 /* MM_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MM_ViewController.m; sourceTree = "<group>"; };
 		1FB43778163EDB610033A0D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MM_ViewController.xib; sourceTree = "<group>"; };
+		1FB43780163EE81C0033A0D1 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		1FB43782163EE9750033A0D1 /* MMStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMStudent.h; sourceTree = "<group>"; };
+		1FB43783163EE9750033A0D1 /* MMStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMStudent.m; sourceTree = "<group>"; };
+		1FB43785163EE9750033A0D1 /* MMClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMClass.h; sourceTree = "<group>"; };
+		1FB43786163EE9750033A0D1 /* MMClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMClass.m; sourceTree = "<group>"; };
+		1FB43788163EEE500033A0D1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FB43789163EEE500033A0D1 /* CoreData.framework in Frameworks */,
 				1FB4375D163EDB610033A0D1 /* UIKit.framework in Frameworks */,
 				1FB4375F163EDB610033A0D1 /* Foundation.framework in Frameworks */,
 				1FB43761163EDB610033A0D1 /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +84,7 @@
 		1FB4375B163EDB610033A0D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1FB43788163EEE500033A0D1 /* CoreData.framework */,
 				1FB4375C163EDB610033A0D1 /* UIKit.framework */,
 				1FB4375E163EDB610033A0D1 /* Foundation.framework */,
 				1FB43760163EDB610033A0D1 /* CoreGraphics.framework */,
@@ -87,6 +99,11 @@
 				1FB4376C163EDB610033A0D1 /* MM_AppDelegate.m */,
 				1FB43774163EDB610033A0D1 /* MM_ViewController.h */,
 				1FB43775163EDB610033A0D1 /* MM_ViewController.m */,
+				1FB4377F163EE81C0033A0D1 /* Model.xcdatamodeld */,
+				1FB43785163EE9750033A0D1 /* MMClass.h */,
+				1FB43786163EE9750033A0D1 /* MMClass.m */,
+				1FB43782163EE9750033A0D1 /* MMStudent.h */,
+				1FB43783163EE9750033A0D1 /* MMStudent.m */,
 				1FB43777163EDB610033A0D1 /* MM_ViewController.xib */,
 				1FB43763163EDB610033A0D1 /* Supporting Files */,
 			);
@@ -177,6 +194,9 @@
 				1FB43769163EDB610033A0D1 /* main.m in Sources */,
 				1FB4376D163EDB610033A0D1 /* MM_AppDelegate.m in Sources */,
 				1FB43776163EDB610033A0D1 /* MM_ViewController.m in Sources */,
+				1FB43781163EE81C0033A0D1 /* Model.xcdatamodeld in Sources */,
+				1FB43784163EE9750033A0D1 /* MMStudent.m in Sources */,
+				1FB43787163EE9750033A0D1 /* MMClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +313,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1FB4377F163EE81C0033A0D1 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1FB43780163EE81C0033A0D1 /* Model.xcdatamodel */,
+			);
+			currentVersion = 1FB43780163EE81C0033A0D1 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1FB4374F163EDB610033A0D1 /* Project object */;
 }
